@@ -1,17 +1,9 @@
 			All Commits:
+For master  branch
 import requests
-repo = 'Mandeep-123/book-practice'
-
-r = requests.get('https://api.github.com/repos/{0}/commits?per_page=1'.format(repo))
-
-commit = r.json()[0]["commit"]['tree']['url']
-r=requests.get(commit)
-print((r.json()['tree']))
-for i in range(0,10):
-    print(r.json()['tree'][i]['path'])
-
-print(commit)
-
+r = requests.get('https://api.github.com/repos/Mandeep-123/book-practice/commits')
+for i in range(0,20):
+    print(r.json()[i]['commit']['message'])
 
 
 
